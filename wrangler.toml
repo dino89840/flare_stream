@@ -1,0 +1,17 @@
+name = "streamtape-keeper"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+# Cron Trigger — 12 နာရီတစ်ခါ auto run
+[triggers]
+crons = ["0 */12 * * *"]
+
+# KV namespace — dashboard က ဆောက်ပြီး id ထည့်ပါ
+[[kv_namespaces]]
+binding = "LINKS_KV"
+id = "YOUR_KV_NAMESPACE_ID_HERE"
+
+# Admin password — dashboard က Settings → Variables မှာ ထည့်ပါ
+# သို့မဟုတ် ဒီမှာ တိုက်ရိုက်ထည့်လည်းရတယ် (မလုံခြုံပေမယ့်)
+[vars]
+ADMIN_PASSWORD = "change-this-to-something-strong"
